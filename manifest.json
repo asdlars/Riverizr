@@ -1,0 +1,29 @@
+//To-Do Volar primeras 374 lineas de html parseado y cortar llamadas a otros js que no sean jquery y malsup-form.js
+{
+  "name": "Riverizr",
+  "version": "1.5.2",
+  "manifest_version": 2,
+  "description": "Esta app es un robot que emite un voto cada 3 segundos a nombre de Rivera al acceder al sitio http://www.skgcl.com/portal/votaciones-king-of-the-hill-starcraft-2/",
+  "homepage_url": "http://rebirth-esports.com",
+  "browser_action": {
+    "name": "Riverizr",
+    "icons": ["icons/rivera16.png"],
+    "default_icon": "icons/rivera16.png"
+  },
+  "permissions": [
+    "http://www.skgcl.com/*","webRequest","webRequestBlocking"
+  ],
+  "icons": {
+    "16": "icons/rivera16.png",
+    "48": "icons/rivera48.png",
+    "128": "icons/rivera128.png"
+  },
+  "background": {
+    "scripts": ["no_images.js"],
+    "persistent": true
+  },
+  "content_scripts": [ {
+    "js": [ "jquery.min.js", "background.js" ],
+    "matches": [ "http://www.skgcl.com/*"]
+  }]
+}
